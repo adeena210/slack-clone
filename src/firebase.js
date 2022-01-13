@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, signOut } from "firebase/auth";
+import {sendPasswordResetEmail, signOut } from "firebase/auth";
 
 
 // Your web app's Firebase configuration

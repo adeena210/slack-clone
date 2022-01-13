@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Home, Button } from '../style.js';
 import {auth} from '../firebase.js';
+import { store } from '../index';
 
 class Landing extends Component {
     
     render(){
-        
+        console.log(store.getState());
         return(
         
             <div>
