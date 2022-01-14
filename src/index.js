@@ -4,8 +4,7 @@ import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
-import GlobalStyle from './style';
-import GlobalFonts from './fonts/fonts';
+import AvatarCreation from './components/AvatarCreation';
 import getstore from './store';
 import { Provider } from 'react-redux';
 import {
@@ -16,10 +15,16 @@ import {
 } from "react-router-dom";
 import { PersistGate } from 'redux-persist/integration/react';
 import { ChakraProvider } from '@chakra-ui/react';
-
+import Fonts from './fonts/fonts';
+import theme from './theme';
 export const { store, persistor } = getstore();
 
-
+/**
+ * TO DO:
+ * 1. add loading everywhere
+ * 2. styling 
+ * 3. clean up code omg
+ */
 
 class App extends React.Component {
   render() {
@@ -27,9 +32,8 @@ class App extends React.Component {
     return(
     <div>
      <React.StrictMode>
-    <ChakraProvider>
-    <GlobalFonts />
-    <GlobalStyle />
+    <ChakraProvider theme={theme}>
+    <Fonts />
     
       <Router>
 					<Routes>
@@ -37,6 +41,7 @@ class App extends React.Component {
             <Route path= '/login' element = {<Login />} />
 						<Route path= '/register' element={<Register/>}/>
             <Route path= '/dashboard' element={<Dashboard/>}/>
+            <Route path= '/avatar' element={<AvatarCreation/>}/>
 					</Routes>
 				</Router>
         </ChakraProvider>
