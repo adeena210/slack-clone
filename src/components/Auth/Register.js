@@ -5,6 +5,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import { Navigate } from 'react-router-dom';
 import { Button, Input, Form } from '../../style.js';
 import { connect } from 'react-redux';
+import { Container } from '@chakra-ui/react';
 
 
 /*
@@ -74,7 +75,8 @@ class Register extends Component{
 
     render(){
         return(
-        <div align='center'>
+        <div >
+        <Container maxW='xl' centerContent>
         <Form as="form" onSubmit={this.handleSubmit}>
         <h1>Register</h1>
         <div>
@@ -125,6 +127,7 @@ class Register extends Component{
         <a href='/login' style={{marginLeft: '.5rem'}}>Sign in</a>
         {this.props.loggedIn ? (<Navigate to= "/dashboard"/>) : null}
         </Form>
+        </Container>
         </div>
         );
     }

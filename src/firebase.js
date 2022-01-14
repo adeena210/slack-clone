@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 import {sendPasswordResetEmail, signOut } from "firebase/auth";
 
 
@@ -18,6 +19,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const storage = getStorage(app);
 
 
 
@@ -43,15 +45,4 @@ export const PasswordResetEmail = async (email) => {
   }
 };
 
-export const logout = () => {
-  signOut(auth).then(() => {
-    // Sign-out successful.
-    console.log("Signed out!")
-   
-  }).catch((error) => {
-    // An error happened.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log("Error ocured: ", errorCode, errorMessage);
-  });
-};
+

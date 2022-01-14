@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { Navigate } from 'react-router-dom';
 import { Button, Input, Form } from '../../style.js';
 import { connect } from 'react-redux';
+import { Container } from '@chakra-ui/react';
 /**
  TO DO:
  1. password reset option
@@ -48,7 +49,7 @@ class Login extends Component {
     render(){
     return(
     <div>
-  
+    <Container maxW='xl' centerContent>
     <Form as="form"onSubmit={this.handleSubmit}>
     <h1>Log-In</h1>
     <div>
@@ -80,7 +81,7 @@ class Login extends Component {
     <a href = '/register' style={{marginLeft: '.5rem'}}>Register here</a>
     {this.props.loggedIn ? (<Navigate to= "/dashboard"/>) : null}
     </Form>
-   
+    </Container>
     </div>
     );
     }

@@ -1,62 +1,4 @@
-import styled, {createGlobalStyle} from 'styled-components';
-
-const GlobalStyle = createGlobalStyle`
-
-html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-
-    @media only screen and (max-width: 1200px){
-        font-size: 58%;
-    }
-    @media only screen and (min-width: 1980px){
-        font-size: 70%;
-    }
-}
-
-body{
-    
-    font-family: 'pixel';
-    font-size: 2rem;
-    font-weight: 500;
-    background: #141301;
-    color: #EF846C;
-
-}
-
-
-
-
-
-
-`;
-
-export default GlobalStyle;
-
-
-
-export const Container = styled.div`
-margin: 0 auto;
-padding: 0 50px;
-max-width: 1300px;
-width: 100%;
-
-@media (max-width:400px){
-    padding: 0 10px;
-}
-@media (max-width:991px) {
-    padding: 0 30px;
-}
-
-@media (min-width: 1500px) {
-    max-width: 1500px;
-}
-
-@media (min-width: 1800px) {
-    max-width: 1800px;
-    padding: 0 30px;
-}
-`;
+import styled from 'styled-components';
 
 export const Button = styled.button`
     border-radius: 3px;
@@ -117,8 +59,8 @@ export const Form = styled.form`
     text-align: center;
    
    
-    
-    ${'' /* position: absolute;
+${'' /*     
+    position: absolute;
     top: 18%;
     left: 20%;
     right: 20%; */}
@@ -173,20 +115,3 @@ export const Form = styled.form`
     }
 `;
 
-export const Home = styled.div`
-    text-align: center;
-    height:600px;
-    margin-top:16%;
-    h1{
-        text-align: center;
-        color: #EF866C;
-        font-size: 10rem;
-    }
-
-    button{
-        margin-bottom: 20px;
-    }
-
-
-
-`;

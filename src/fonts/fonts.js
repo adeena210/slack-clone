@@ -1,14 +1,14 @@
-import { createGlobalStyle } from "styled-components";
-
-import Hussar from './HussarBoldWeb-bf92.woff'
+import { Global } from '@emotion/react'
 import pixel1 from './pixeldigivolve-mom9-webfont.woff2'
 import pixel2 from './pixeldigivolve-mom9-webfont.woff'
 
 
 
 
-export default createGlobalStyle`
-    @font-face {
+const Fonts = () => (
+<Global
+   styles={ `
+   @font-face {
     font-family: 'pixel';
     src: local('pixel'), local('pixel'), 
          url(${pixel1}) format('woff2'),
@@ -17,5 +17,8 @@ export default createGlobalStyle`
     font-style: normal;
 
 }
+   `}
+/>
+)
 
-`
+export default Fonts
