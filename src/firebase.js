@@ -3,6 +3,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import {sendPasswordResetEmail, signOut } from "firebase/auth";
+import { getDatabase, ref, set } from "firebase/database";
 
 
 // Your web app's Firebase configuration
@@ -20,19 +21,10 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
+export const database = getDatabase(app);
 
 
 
-export const authlistener = onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    // ...
-  } else {
-      
-  }
-});
 
 
 export const PasswordResetEmail = async (email) => {
